@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="8dp"
-    android:layout_margin="10dp">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="latestRead"
+            type="com.sjcreatives.financialliteracy101.models.LatestRead" />
+    </data>
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:scaleType="centerCrop"
-        tools:srcCompat="@tools:sample/backgrounds/scenic"
-        android:contentDescription="TODO"/>
+    <androidx.cardview.widget.CardView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        android:layout_margin="5dp">
 
-</androidx.cardview.widget.CardView>
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/pf"
+            android:contentDescription="TODO"/>
+
+    </androidx.cardview.widget.CardView>
+</layout>

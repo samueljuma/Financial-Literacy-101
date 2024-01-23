@@ -7,11 +7,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_margin="16dp"
+        android:layout_margin="8dp"
         tools:context=".MainActivity">
 
         <TextView
             android:id="@+id/textView"
+            android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_width="wrap_content"
@@ -25,11 +26,14 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:textStyle="bold"
+            android:textSize="14sp"
+            android:textColor="@color/black"
             android:layout_marginTop="20dp"
             android:layout_height="wrap_content"
             android:text="@string/latest_reads" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/latest_reads_recyclerview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"

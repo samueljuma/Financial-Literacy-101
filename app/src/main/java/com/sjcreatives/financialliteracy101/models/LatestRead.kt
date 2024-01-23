@@ -1,5 +1,9 @@
 package com.sjcreatives.financialliteracy101.models
 
-class LatestRead {
 
-}
+data class LatestRead (
+    val id: Int,
+    val title: String,
+    val image: Int
+)
+
