@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Financial Literacy 101</string>
+    <string name="appName">Financial Literacy 101</string>
+    <string name="latest_reads">Latest Reads</string>
+</resources>
