@@ -19,13 +19,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:text="@string/appName"
-            android:layout_gravity="center_horizontal"
+            android:layout_gravity="center"
             />
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:textStyle="bold"
+            android:layout_width="wrap_content"
             android:textSize="14sp"
             android:textColor="@color/black"
             android:layout_marginTop="20dp"
@@ -41,10 +40,21 @@
             android:scrollbars="horizontal"
             tools:listitem="@layout/module_item" />
 
-        <androidx.recyclerview.widget.RecyclerView
+        <TextView
+            android:id="@+id/textview3"
+            android:layout_width="wrap_content"
+            android:textSize="14sp"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
             android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="Learning Modules" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/modules_recyclerview"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
     </LinearLayout>
 </layout>

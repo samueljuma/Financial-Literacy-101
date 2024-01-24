@@ -5,11 +5,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.sjcreatives.financialliteracy101.databinding.ModuleItemBinding
+import com.sjcreatives.financialliteracy101.databinding.LatestReadItemBinding
 import com.sjcreatives.financialliteracy101.models.LatestRead
 
-class LatestReadsAdapter(): ListAdapter<LatestRead, LatestReadsAdapter.ViewHolder>(DiffCallback()) {
-    class ViewHolder (val binding:ModuleItemBinding): RecyclerView.ViewHolder(binding.root) {
+class LatestReadsAdapter(): ListAdapter<LatestRead, LatestReadsAdapter.ViewHolder>(LatestReadDiffCallback()) {
+    class ViewHolder (val binding:LatestReadItemBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(latestRead: LatestRead){
             binding.latestRead = latestRead
             binding.executePendingBindings()
@@ -18,7 +18,7 @@ class LatestReadsAdapter(): ListAdapter<LatestRead, LatestReadsAdapter.ViewHolde
         companion object {
             fun from(parent:ViewGroup): ViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
-                val binding = ModuleItemBinding.inflate(layoutInflater, parent, false)
+                val binding = LatestReadItemBinding.inflate(layoutInflater, parent, false)
                 return ViewHolder(binding)
             }
         }
@@ -34,7 +34,7 @@ class LatestReadsAdapter(): ListAdapter<LatestRead, LatestReadsAdapter.ViewHolde
     }
 }
 
-class DiffCallback : DiffUtil.ItemCallback<LatestRead>() {
+class LatestReadDiffCallback : DiffUtil.ItemCallback<LatestRead>() {
     override fun areItemsTheSame(oldItem: LatestRead, newItem: LatestRead): Boolean {
         return  oldItem.id == newItem.id
     }
