@@ -22,10 +22,10 @@ class MainActivity : AppCompatActivity() {
 
         latestReadsAdapter = LatestReadsAdapter()
 
-        val lr1= LatestRead(0,"Title1",1)
-        val lr2= LatestRead(0,"Title1",1)
-        val lr3= LatestRead(0,"Title1",1)
-        val lr4= LatestRead(0,"Title1",1)
+        val lr1= LatestRead(0,"Title1",R.drawable.read1)
+        val lr2= LatestRead(0,"Title1",R.drawable.read2)
+        val lr3= LatestRead(0,"Title1",R.drawable.read3)
+        val lr4= LatestRead(0,"Title1",R.drawable.read4)
 
         val latestReadList = listOf(lr1,lr2,lr3,lr4)
 
@@ -39,12 +39,12 @@ class MainActivity : AppCompatActivity() {
 
         modulesAdapter = ModulesAdapter()
 
-        val module1 = LearningModule(0,"Investing", "Let's Invest")
-        val module2 = LearningModule(0,"Investing", "Let's Invest")
-        val module3 = LearningModule(0,"Investing", "Let's Invest")
-        val module4 = LearningModule(0,"Investing", "Let's Invest")
-        val module5 = LearningModule(0,"Investing", "Let's Invest")
-        val module6 = LearningModule(0,"Investing", "Let's Invest")
+        val module1 = LearningModule(0,"Saving", R.drawable.save)
+        val module2 = LearningModule(0,"Investing", R.drawable.invest)
+        val module3 = LearningModule(0,"Budgeting", R.drawable.budget)
+        val module4 = LearningModule(0,"Insurance", R.drawable.insurance)
+        val module5 = LearningModule(0,"Debt/Credit", R.drawable.credit_debt)
+        val module6 = LearningModule(0,"Tax", R.drawable.tax)
 
         val modulesList = listOf(module1, module2, module3, module4, module5, module6)
 

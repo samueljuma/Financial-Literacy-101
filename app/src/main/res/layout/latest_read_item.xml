@@ -21,7 +21,8 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/pf"
+            tools:src="@drawable/read1"
+            android:src="@{latestRead.image}"
             android:contentDescription="TODO"/>
 
     </androidx.cardview.widget.CardView>
