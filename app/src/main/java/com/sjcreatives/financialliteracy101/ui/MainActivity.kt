@@ -1,35 +1,36 @@
-package com.sjcreatives.financialliteracy101
+package com.sjcreatives.financialliteracy101.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.sjcreatives.financialliteracy101.adapters.LatestReadsAdapter
-import com.sjcreatives.financialliteracy101.adapters.ModulesAdapter
+import com.sjcreatives.financialliteracy101.R
+import com.sjcreatives.financialliteracy101.ui.adapters.LatestReadsAdapter
+import com.sjcreatives.financialliteracy101.ui.adapters.ModulesAdapter
 import com.sjcreatives.financialliteracy101.databinding.ActivityMainBinding
-import com.sjcreatives.financialliteracy101.models.LatestRead
-import com.sjcreatives.financialliteracy101.models.LearningModule
+import com.sjcreatives.financialliteracy101.data.models.LatestRead
+import com.sjcreatives.financialliteracy101.data.models.LearningModule
+import com.sjcreatives.financialliteracy101.data.repositories.MainActivityViewModel
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var latestReadsAdapter: LatestReadsAdapter
     private lateinit var modulesAdapter: ModulesAdapter
+    private lateinit var mainActivityViewModel: MainActivityViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val binding : ActivityMainBinding = DataBindingUtil.setContentView(this,R.layout.activity_main)
+        val binding : ActivityMainBinding = DataBindingUtil.setContentView(this,
+            R.layout.activity_main
+        )
 
         latestReadsAdapter = LatestReadsAdapter()
 
-        val lr1= LatestRead(0,"Title1",R.drawable.read1)
-        val lr2= LatestRead(0,"Title1",R.drawable.read2)
-        val lr3= LatestRead(0,"Title1",R.drawable.read3)
-        val lr4= LatestRead(0,"Title1",R.drawable.read4)
+        mainActivityViewModel = ViewModelProvider(this)[MainActivityViewModel::class.java]
 
-        val latestReadList = listOf(lr1,lr2,lr3,lr4)
-
-        latestReadsAdapter.submitList(latestReadList)
+        latestReadsAdapter.submitList(mainActivityViewModel.getLatestReadsList())
 
         binding.latestReadsRecyclerview.adapter = latestReadsAdapter
         binding.latestReadsRecyclerview.layoutManager = LinearLayoutManager(

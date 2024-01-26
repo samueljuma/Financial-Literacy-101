@@ -6,7 +6,7 @@
     <data>
         <variable
             name="latestRead"
-            type="com.sjcreatives.financialliteracy101.models.LatestRead" />
+            type="com.sjcreatives.financialliteracy101.data.models.LatestRead" />
     </data>
 
     <androidx.cardview.widget.CardView

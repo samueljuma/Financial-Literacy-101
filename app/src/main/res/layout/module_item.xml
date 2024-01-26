@@ -6,7 +6,7 @@
     <data>
         <variable
             name="learningModule"
-            type="com.sjcreatives.financialliteracy101.models.LearningModule" />
+            type="com.sjcreatives.financialliteracy101.data.models.LearningModule" />
     </data>
 
     <androidx.cardview.widget.CardView

@@ -50,4 +50,16 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
+    /**
+     * Lifecycle Dependencies
+     */
+    // ViewModel
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
+
+    // LiveData
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
+
+    // Annotation processor
+    kapt("androidx.lifecycle:lifecycle-compiler:2.7.0")
+
 }

@@ -1,4 +1,4 @@
-package com.sjcreatives.financialliteracy101.adapters
+package com.sjcreatives.financialliteracy101.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,9 +6,11 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.sjcreatives.financialliteracy101.databinding.LatestReadItemBinding
-import com.sjcreatives.financialliteracy101.models.LatestRead
+import com.sjcreatives.financialliteracy101.data.models.LatestRead
 
-class LatestReadsAdapter(): ListAdapter<LatestRead, LatestReadsAdapter.ViewHolder>(LatestReadDiffCallback()) {
+class LatestReadsAdapter(): ListAdapter<LatestRead, LatestReadsAdapter.ViewHolder>(
+    LatestReadDiffCallback()
+) {
     class ViewHolder (val binding:LatestReadItemBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(latestRead: LatestRead){
             binding.latestRead = latestRead

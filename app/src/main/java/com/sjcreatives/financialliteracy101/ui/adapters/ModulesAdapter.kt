@@ -1,4 +1,4 @@
-package com.sjcreatives.financialliteracy101.adapters
+package com.sjcreatives.financialliteracy101.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.sjcreatives.financialliteracy101.databinding.ModuleItemBinding
-import com.sjcreatives.financialliteracy101.models.LearningModule
+import com.sjcreatives.financialliteracy101.data.models.LearningModule
 
 class ModulesAdapter(): ListAdapter<LearningModule, ModulesAdapter.ViewHolder>(ModuleDiffCallback()) {
 
@@ -17,7 +17,7 @@ class ModulesAdapter(): ListAdapter<LearningModule, ModulesAdapter.ViewHolder>(M
         }
 
         companion object{
-            fun from(parent: ViewGroup): ViewHolder{
+            fun from(parent: ViewGroup): ViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
                 val binding = ModuleItemBinding.inflate(layoutInflater, parent, false)
                 return ViewHolder(binding)
