@@ -1,4 +1,4 @@
-package com.sjcreatives.financialliteracy101.data.repositories
+package com.sjcreatives.financialliteracy101.ui
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -40,6 +40,17 @@ class MainActivityViewModel: ViewModel() {
         _learningModules.value = listOf(module1, module2, module3, module4, module5, module6)
     }
 
+
+    private val _navigateToModule = MutableLiveData<LearningModule?>()
+    val navigateToModule: LiveData<LearningModule?> = _navigateToModule
+
+    fun onModuleClicked(module: LearningModule){
+        _navigateToModule.value = module
+    }
+
+    fun doneNavigatingToModule(){
+        _navigateToModule.value = null
+    }
 
 
 }

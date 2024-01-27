@@ -2,8 +2,8 @@ package com.sjcreatives.financialliteracy101.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -11,9 +11,7 @@ import com.sjcreatives.financialliteracy101.R
 import com.sjcreatives.financialliteracy101.ui.adapters.LatestReadsAdapter
 import com.sjcreatives.financialliteracy101.ui.adapters.ModulesAdapter
 import com.sjcreatives.financialliteracy101.databinding.ActivityMainBinding
-import com.sjcreatives.financialliteracy101.data.models.LatestRead
-import com.sjcreatives.financialliteracy101.data.models.LearningModule
-import com.sjcreatives.financialliteracy101.data.repositories.MainActivityViewModel
+import com.sjcreatives.financialliteracy101.ui.adapters.ModuleClickListener
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,12 +31,23 @@ class MainActivity : AppCompatActivity() {
         /**
          * Observers
          */
+        //Reduces boilerplate code related to observers
+        binding.lifecycleOwner = this
+
         mainActivityViewModel.latestReads.observe(this) {
             latestReads -> latestReadsAdapter.submitList(latestReads)
         }
-//
+
         mainActivityViewModel.learningModules.observe(this) {
             learningModules -> modulesAdapter.submitList(learningModules)
+        }
+
+        mainActivityViewModel.navigateToModule.observe(this){
+            it?.let {
+                Toast.makeText(this,"You just clicked ${it.title}", Toast.LENGTH_SHORT).show()
+                mainActivityViewModel.doneNavigatingToModule()
+            }
+
         }
 
 
@@ -54,7 +63,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupModulesRecyclerview(binding: ActivityMainBinding){
-        modulesAdapter = ModulesAdapter()
+        modulesAdapter = ModulesAdapter(ModuleClickListener {module ->
+            mainActivityViewModel.onModuleClicked(module)
+        })
+
         binding.modulesRecyclerview.apply {
             adapter = modulesAdapter
             layoutManager = GridLayoutManager(this@MainActivity, 2)
