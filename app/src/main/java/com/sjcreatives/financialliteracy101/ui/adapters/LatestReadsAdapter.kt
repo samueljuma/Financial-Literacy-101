@@ -8,12 +8,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.sjcreatives.financialliteracy101.databinding.LatestReadItemBinding
 import com.sjcreatives.financialliteracy101.data.models.LatestRead
 
-class LatestReadsAdapter(): ListAdapter<LatestRead, LatestReadsAdapter.ViewHolder>(
+class LatestReadsAdapter( val latestReadClickListener: LatestReadClickListener): ListAdapter<LatestRead, LatestReadsAdapter.ViewHolder>(
     LatestReadDiffCallback()
 ) {
     class ViewHolder (val binding:LatestReadItemBinding): RecyclerView.ViewHolder(binding.root) {
-        fun bind(latestRead: LatestRead){
+        fun bind(latestRead: LatestRead, clickListener: LatestReadClickListener){
             binding.latestRead = latestRead
+            binding.clickListener = clickListener
             binding.executePendingBindings()
         }
 
@@ -32,7 +33,7 @@ class LatestReadsAdapter(): ListAdapter<LatestRead, LatestReadsAdapter.ViewHolde
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(getItem(position)!!)
+        holder.bind(getItem(position)!!, latestReadClickListener)
     }
 }
 
@@ -45,4 +46,8 @@ class LatestReadDiffCallback : DiffUtil.ItemCallback<LatestRead>() {
         return oldItem == newItem
     }
 
+}
+
+class LatestReadClickListener(val clickListener: (latestRead: LatestRead) -> Unit){
+    fun onClick(latestRead: LatestRead) = clickListener(latestRead)
 }

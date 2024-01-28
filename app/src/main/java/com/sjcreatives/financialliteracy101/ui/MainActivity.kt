@@ -11,6 +11,7 @@ import com.sjcreatives.financialliteracy101.R
 import com.sjcreatives.financialliteracy101.ui.adapters.LatestReadsAdapter
 import com.sjcreatives.financialliteracy101.ui.adapters.ModulesAdapter
 import com.sjcreatives.financialliteracy101.databinding.ActivityMainBinding
+import com.sjcreatives.financialliteracy101.ui.adapters.LatestReadClickListener
 import com.sjcreatives.financialliteracy101.ui.adapters.ModuleClickListener
 
 class MainActivity : AppCompatActivity() {
@@ -50,10 +51,19 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        mainActivityViewModel.navigateToLatestRead.observe(this){
+            it?.let {
+                Toast.makeText(this,"You just clicked ${it.title}", Toast.LENGTH_SHORT).show()
+                mainActivityViewModel.doneNavigatingToLatestRead()
+            }
+        }
+
 
     }
     private fun setupLatestReadsRecyclerview(binding: ActivityMainBinding){
-        latestReadsAdapter = LatestReadsAdapter()
+        latestReadsAdapter = LatestReadsAdapter(LatestReadClickListener { latestRead ->
+            mainActivityViewModel.onLatestReadClicked(latestRead)
+        })
         binding.latestReadsRecyclerview.apply {
             adapter = latestReadsAdapter
             layoutManager = LinearLayoutManager(this@MainActivity,

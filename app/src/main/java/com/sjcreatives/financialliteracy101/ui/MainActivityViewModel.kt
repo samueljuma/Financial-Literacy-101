@@ -22,9 +22,9 @@ class MainActivityViewModel: ViewModel() {
     private fun loadLatestReads() {
 
         val lr1 = LatestRead(0, "Title1", R.drawable.read1)
-        val lr2 = LatestRead(0, "Title1", R.drawable.read2)
-        val lr3 = LatestRead(0, "Title1", R.drawable.read3)
-        val lr4 = LatestRead(0, "Title1", R.drawable.read4)
+        val lr2 = LatestRead(0, "Title2", R.drawable.read2)
+        val lr3 = LatestRead(0, "Title3", R.drawable.read3)
+        val lr4 = LatestRead(0, "Title4", R.drawable.read4)
 
         _latestReads.value = listOf(lr1, lr2, lr3, lr4)
     }
@@ -34,7 +34,7 @@ class MainActivityViewModel: ViewModel() {
         val module2 = LearningModule(0,"Investing", R.drawable.invest)
         val module3 = LearningModule(0,"Budgeting", R.drawable.budget)
         val module4 = LearningModule(0,"Insurance", R.drawable.insurance)
-        val module5 = LearningModule(0,"Debt/Credit", R.drawable.credit_debt)
+        val module5 = LearningModule(0,"Debt/Credit", R.drawable.debt)
         val module6 = LearningModule(0,"Tax", R.drawable.tax)
 
         _learningModules.value = listOf(module1, module2, module3, module4, module5, module6)
@@ -50,6 +50,18 @@ class MainActivityViewModel: ViewModel() {
 
     fun doneNavigatingToModule(){
         _navigateToModule.value = null
+    }
+
+
+    private val _navigateToLatestRead = MutableLiveData<LatestRead?>()
+    val navigateToLatestRead: LiveData<LatestRead?> = _navigateToLatestRead
+
+    fun onLatestReadClicked(latestRead: LatestRead) {
+        _navigateToLatestRead.value = latestRead
+    }
+
+    fun doneNavigatingToLatestRead() {
+        _navigateToLatestRead.value = null
     }
 
 

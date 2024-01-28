@@ -10,9 +10,14 @@
         <variable
             name="viewModel"
             type="com.sjcreatives.financialliteracy101.ui.MainActivityViewModel" />
+
+        <variable
+            name="clickListener"
+            type="com.sjcreatives.financialliteracy101.ui.adapters.LatestReadClickListener" />
     </data>
 
     <androidx.cardview.widget.CardView
+        android:onClick="@{() -> clickListener.onClick(latestRead)}"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         app:cardCornerRadius="8dp"
