@@ -1,4 +1,4 @@
-package com.sjcreatives.financialliteracy101.ui
+package com.sjcreatives.financialliteracy101.ui.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
