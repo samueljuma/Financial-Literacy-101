@@ -1,4 +1,4 @@
-package com.sjcreatives.financialliteracy101.ui.main
+package com.sjcreatives.financialliteracy101.ui.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -7,7 +7,7 @@ import com.sjcreatives.financialliteracy101.R
 import com.sjcreatives.financialliteracy101.data.models.LatestRead
 import com.sjcreatives.financialliteracy101.data.models.LearningModule
 
-class MainActivityViewModel: ViewModel() {
+class HomeViewModel : ViewModel() {
 
     private val _latestReads = MutableLiveData<List<LatestRead>>()
     val latestReads: LiveData<List<LatestRead>> = _latestReads
@@ -63,6 +63,4 @@ class MainActivityViewModel: ViewModel() {
     fun doneNavigatingToLatestRead() {
         _navigateToLatestRead.value = null
     }
-
-
 }

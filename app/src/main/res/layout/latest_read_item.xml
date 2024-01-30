@@ -7,9 +7,6 @@
         <variable
             name="latestRead"
             type="com.sjcreatives.financialliteracy101.data.models.LatestRead" />
-        <variable
-            name="viewModel"
-            type="com.sjcreatives.financialliteracy101.ui.main.MainActivityViewModel" />
 
         <variable
             name="clickListener"
