@@ -11,16 +11,16 @@
         <variable
             name="clickListener"
             type="com.sjcreatives.financialliteracy101.ui.adapters.ModuleClickListener" />
-    </data>
+        </data>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="150dp"
         app:cardElevation="8dp"
         android:layout_margin="4dp"
+        android:onClick="@{() -> clickListener.onClick(learningModule)}"
         app:cardCornerRadius="10dp">
 <androidx.constraintlayout.widget.ConstraintLayout
-    android:onClick="@{()->clickListener.onClick(learningModule)}"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">

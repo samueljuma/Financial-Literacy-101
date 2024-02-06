@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.sjcreatives.financialliteracy101.databinding.ModuleItemBinding
 import com.sjcreatives.financialliteracy101.data.models.LearningModule
 
-class ModulesAdapter(val clickListener: ModuleClickListener): ListAdapter<LearningModule, ModulesAdapter.ViewHolder>(ModuleDiffCallback()) {
+class ModulesAdapter (
+    private val clickListener: ModuleClickListener
+): ListAdapter<LearningModule, ModulesAdapter.ViewHolder>(ModuleDiffCallback()) {
 
     class ViewHolder (val binding: ModuleItemBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(learningModule: LearningModule, clickListener: ModuleClickListener){
@@ -31,7 +33,7 @@ class ModulesAdapter(val clickListener: ModuleClickListener): ListAdapter<Learni
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(getItem(position)!!, clickListener)
+        holder.bind(getItem(position)!!, clickListener )
     }
 
 }
@@ -47,6 +49,7 @@ class ModuleDiffCallback: DiffUtil.ItemCallback<LearningModule>() {
 
 }
 
-class ModuleClickListener (val clickListener: (module: LearningModule) -> Unit){
+class ModuleClickListener(val clickListener: (module: LearningModule) -> Unit) {
     fun onClick(module: LearningModule) = clickListener(module)
 }
+

@@ -10,7 +10,7 @@
         android:layout_margin="2dp"
         tools:context=".ui.main.MainActivity">
 
-        <androidx.fragment.app.FragmentContainerView
+        <fragment
             android:id="@+id/fragment"
             android:name="com.sjcreatives.financialliteracy101.ui.home.HomeFragment"
             android:layout_width="0dp"

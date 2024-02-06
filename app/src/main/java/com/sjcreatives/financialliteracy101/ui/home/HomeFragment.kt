@@ -1,6 +1,7 @@
 package com.sjcreatives.financialliteracy101.ui.home
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,10 +10,7 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.sjcreatives.financialliteracy101.R
-import com.sjcreatives.financialliteracy101.databinding.ActivityMainBinding
 import com.sjcreatives.financialliteracy101.databinding.FragmentHomeBinding
-import com.sjcreatives.financialliteracy101.ui.adapters.LatestReadClickListener
 import com.sjcreatives.financialliteracy101.ui.adapters.LatestReadsAdapter
 import com.sjcreatives.financialliteracy101.ui.adapters.ModuleClickListener
 import com.sjcreatives.financialliteracy101.ui.adapters.ModulesAdapter
@@ -45,26 +43,15 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-        homeViewModel.navigateToModule.observe(viewLifecycleOwner){
-            it?.let {
-                Toast.makeText(context,
-                    "You just clicked ${it.title}",Toast.LENGTH_SHORT).show()
-                homeViewModel.doneNavigatingToModule()
+        homeViewModel.navigateToModule.observe(viewLifecycleOwner){ module ->
+            module?.let {
+                Toast.makeText(context, "Hello ${module.title}",Toast.LENGTH_SHORT).show()
             }
-        }
-
-        homeViewModel.navigateToLatestRead.observe(viewLifecycleOwner){
-            it?.let {
-                Toast.makeText(context,
-                    "You just clicked ${it.title}",Toast.LENGTH_SHORT).show()
-            }
-            homeViewModel.doneNavigatingToLatestRead()
         }
     }
 
     private fun setupModulesRecyclerview (binding: FragmentHomeBinding){
-        modulesAdapter = ModulesAdapter(ModuleClickListener { module->
+        modulesAdapter = ModulesAdapter(ModuleClickListener { module ->
             homeViewModel.onModuleClicked(module)
         })
         binding.modulesRecyclerview.apply {
@@ -74,9 +61,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupLatestReadsRecyclerview(binding: FragmentHomeBinding){
-        latestReadsAdapter = LatestReadsAdapter(LatestReadClickListener { latestRead ->
-            homeViewModel.onLatestReadClicked(latestRead)
-        })
+        latestReadsAdapter = LatestReadsAdapter()
         binding.latestReadsRecyclerview.apply {
             adapter = latestReadsAdapter
             layoutManager = LinearLayoutManager(context,

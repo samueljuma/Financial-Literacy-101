@@ -36,10 +36,16 @@ class HomeViewModel : ViewModel() {
         val module4 = LearningModule(0,"Insurance", R.drawable.insurance)
         val module5 = LearningModule(0,"Debt/Credit", R.drawable.debt)
         val module6 = LearningModule(0,"Tax", R.drawable.tax)
+        val module7 = LearningModule(0,"Saving", R.drawable.save)
+        val module8 = LearningModule(0,"Investing", R.drawable.invest)
+        val module9 = LearningModule(0,"Budgeting", R.drawable.budget)
+        val module10 = LearningModule(0,"Insurance", R.drawable.insurance)
+        val module11 = LearningModule(0,"Debt/Credit", R.drawable.debt)
+        val module12 = LearningModule(0,"Tax", R.drawable.tax)
 
-        _learningModules.value = listOf(module1, module2, module3, module4, module5, module6)
+        _learningModules.value = listOf(module1, module2, module3, module4, module5, module6,
+            module7, module8, module9, module10, module11, module12)
     }
-
 
     private val _navigateToModule = MutableLiveData<LearningModule?>()
     val navigateToModule: LiveData<LearningModule?> = _navigateToModule
@@ -48,19 +54,7 @@ class HomeViewModel : ViewModel() {
         _navigateToModule.value = module
     }
 
-    fun doneNavigatingToModule(){
+    fun doneNavigatingToModule (){
         _navigateToModule.value = null
-    }
-
-
-    private val _navigateToLatestRead = MutableLiveData<LatestRead?>()
-    val navigateToLatestRead: LiveData<LatestRead?> = _navigateToLatestRead
-
-    fun onLatestReadClicked(latestRead: LatestRead) {
-        _navigateToLatestRead.value = latestRead
-    }
-
-    fun doneNavigatingToLatestRead() {
-        _navigateToLatestRead.value = null
     }
 }
