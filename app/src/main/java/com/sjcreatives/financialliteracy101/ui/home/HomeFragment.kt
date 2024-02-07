@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sjcreatives.financialliteracy101.databinding.FragmentHomeBinding
+import com.sjcreatives.financialliteracy101.ui.adapters.LatestReadClickListener
 import com.sjcreatives.financialliteracy101.ui.adapters.LatestReadsAdapter
 import com.sjcreatives.financialliteracy101.ui.adapters.ModuleClickListener
 import com.sjcreatives.financialliteracy101.ui.adapters.ModulesAdapter
@@ -46,8 +47,16 @@ class HomeFragment : Fragment() {
         homeViewModel.navigateToModule.observe(viewLifecycleOwner){ module ->
             module?.let {
                 Toast.makeText(context, "Hello ${module.title}",Toast.LENGTH_SHORT).show()
+                homeViewModel.doneNavigatingToModule()
             }
         }
+        homeViewModel.navigateToLatestRead.observe(viewLifecycleOwner){ latestRead ->
+            latestRead?.let {
+                Toast.makeText(context, "Hello ${latestRead.title}", Toast.LENGTH_SHORT).show()
+                homeViewModel.doneNavigatingToLatestRead()
+            }
+        }
+
     }
 
     private fun setupModulesRecyclerview (binding: FragmentHomeBinding){
@@ -61,7 +70,9 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupLatestReadsRecyclerview(binding: FragmentHomeBinding){
-        latestReadsAdapter = LatestReadsAdapter()
+        latestReadsAdapter = LatestReadsAdapter(LatestReadClickListener {latestRead ->
+            homeViewModel.onLatestReadClicked(latestRead)
+        })
         binding.latestReadsRecyclerview.apply {
             adapter = latestReadsAdapter
             layoutManager = LinearLayoutManager(context,

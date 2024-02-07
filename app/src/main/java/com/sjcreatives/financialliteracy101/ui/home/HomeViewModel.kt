@@ -57,4 +57,15 @@ class HomeViewModel : ViewModel() {
     fun doneNavigatingToModule (){
         _navigateToModule.value = null
     }
+
+    private val _navigateToLatestRead = MutableLiveData<LatestRead?>()
+    val navigateToLatestRead: LiveData<LatestRead?> = _navigateToLatestRead
+
+    fun onLatestReadClicked (latestRead: LatestRead){
+        _navigateToLatestRead.value = latestRead
+    }
+
+    fun doneNavigatingToLatestRead(){
+        _navigateToLatestRead.value = null
+    }
 }
