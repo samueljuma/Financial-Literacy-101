@@ -47,7 +47,11 @@ class HomeFragment : Fragment() {
 
         homeViewModel.navigateToModule.observe(viewLifecycleOwner){ module ->
             module?.let {
-                Toast.makeText(context, "Hello ${module.title}",Toast.LENGTH_SHORT).show()
+
+                this.findNavController().navigate(
+                    HomeFragmentDirections.actionHomeFragmentToSavingFragment(module)
+                )
+                Toast.makeText(context, "You just navigated to ${module.title} screen",Toast.LENGTH_SHORT).show()
                 homeViewModel.doneNavigatingToModule()
             }
         }
