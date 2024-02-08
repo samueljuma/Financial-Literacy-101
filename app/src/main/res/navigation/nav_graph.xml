@@ -13,6 +13,21 @@
         <action
             android:id="@+id/action_homeFragment_to_savingFragment"
             app:destination="@id/savingFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_investingFragment"
+            app:destination="@id/investingFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_budgetingFragment"
+            app:destination="@id/budgetingFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_insuranceFragment"
+            app:destination="@id/insuranceFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_debtFragment"
+            app:destination="@id/debtFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_taxFragment"
+            app:destination="@id/taxFragment" />
     </fragment>
     <fragment
         android:id="@+id/savingFragment"
@@ -23,4 +38,29 @@
             android:name="module"
             app:argType="com.sjcreatives.financialliteracy101.data.models.LearningModule" />
     </fragment>
+    <fragment
+        android:id="@+id/investingFragment"
+        android:name="com.sjcreatives.financialliteracy101.ui.investing.InvestingFragment"
+        android:label="fragment_investing"
+        tools:layout="@layout/fragment_investing" />
+    <fragment
+        android:id="@+id/budgetingFragment"
+        android:name="com.sjcreatives.financialliteracy101.ui.budgeting.BudgetingFragment"
+        android:label="fragment_budgeting"
+        tools:layout="@layout/fragment_budgeting" />
+    <fragment
+        android:id="@+id/insuranceFragment"
+        android:name="com.sjcreatives.financialliteracy101.ui.insurance.InsuranceFragment"
+        android:label="fragment_insurance"
+        tools:layout="@layout/fragment_insurance" />
+    <fragment
+        android:id="@+id/debtFragment"
+        android:name="com.sjcreatives.financialliteracy101.ui.debt.DebtFragment"
+        android:label="fragment_debt"
+        tools:layout="@layout/fragment_debt" />
+    <fragment
+        android:id="@+id/taxFragment"
+        android:name="com.sjcreatives.financialliteracy101.ui.tax.TaxFragment"
+        android:label="fragment_tax"
+        tools:layout="@layout/fragment_tax" />
 </navigation>
