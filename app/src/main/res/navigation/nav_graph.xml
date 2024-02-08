@@ -34,9 +34,6 @@
         android:name="com.sjcreatives.financialliteracy101.ui.saving.SavingFragment"
         android:label="SavingFragment"
         tools:layout="@layout/fragment_saving">
-        <argument
-            android:name="module"
-            app:argType="com.sjcreatives.financialliteracy101.data.models.LearningModule" />
     </fragment>
     <fragment
         android:id="@+id/investingFragment"

@@ -50,12 +50,12 @@ class HomeFragment : Fragment() {
             module?.let {
 
                 when(module.title){
-                    "Saving" -> navigateToSavingsModuleScreen(module)
-                    "Investing" -> navigateToInvestmentModuleScreen(module)
-                    "Budgeting" -> navigateTOBudgetingModuleScreen(module)
-                    "Insurance" -> navigateTOInsuranceModuleScreen(module)
-                    "Debt/Credit" -> navigateTODebtModuleScreen(module)
-                    "Tax" -> navigateTOTaxModuleScreen(module)
+                    "Saving" -> navigateToSavingsModuleScreen()
+                    "Investing" -> navigateToInvestmentModuleScreen()
+                    "Budgeting" -> navigateTOBudgetingModuleScreen()
+                    "Insurance" -> navigateTOInsuranceModuleScreen()
+                    "Debt/Credit" -> navigateTODebtModuleScreen()
+                    "Tax" -> navigateTOTaxModuleScreen()
                     else -> Toast.makeText(context, "Oops! ${module.title} Not Found",Toast.LENGTH_SHORT).show()
 
                 }
@@ -71,27 +71,37 @@ class HomeFragment : Fragment() {
 
     }
 
-    private fun navigateTOBudgetingModuleScreen(module: LearningModule) {
-        Toast.makeText(context, "Oops! ${module.title} Module Not Found",Toast.LENGTH_SHORT).show()
-    }
-
-    private fun navigateTOInsuranceModuleScreen(module: LearningModule) {
-        Toast.makeText(context, "Oops! ${module.title} Module Not Found",Toast.LENGTH_SHORT).show()
-    }
-    private fun navigateTODebtModuleScreen(module: LearningModule) {
-        Toast.makeText(context, "Oops! ${module.title} Module Not Found",Toast.LENGTH_SHORT).show()
-    }
-    private fun navigateTOTaxModuleScreen(module: LearningModule) {
-        Toast.makeText(context, "Oops! ${module.title} Module Not Found",Toast.LENGTH_SHORT).show()
-    }
-
-    private fun navigateToInvestmentModuleScreen(module: LearningModule) {
-        Toast.makeText(context, "Oops! ${module.title} Module Not Found",Toast.LENGTH_SHORT).show()
-    }
-
-    private fun navigateToSavingsModuleScreen(module: LearningModule) {
+    private fun navigateTOBudgetingModuleScreen() {
         this.findNavController().navigate(
-            HomeFragmentDirections.actionHomeFragmentToSavingFragment(module)
+            HomeFragmentDirections.actionHomeFragmentToBudgetingFragment()
+        )
+    }
+
+    private fun navigateTOInsuranceModuleScreen() {
+        this.findNavController().navigate(
+            HomeFragmentDirections.actionHomeFragmentToInsuranceFragment()
+        )
+    }
+    private fun navigateTODebtModuleScreen() {
+        this.findNavController().navigate(
+            HomeFragmentDirections.actionHomeFragmentToDebtFragment()
+        )
+    }
+    private fun navigateTOTaxModuleScreen() {
+        this.findNavController().navigate(
+            HomeFragmentDirections.actionHomeFragmentToTaxFragment()
+        )
+    }
+
+    private fun navigateToInvestmentModuleScreen() {
+        this.findNavController().navigate(
+            HomeFragmentDirections.actionHomeFragmentToInvestingFragment()
+        )
+    }
+
+    private fun navigateToSavingsModuleScreen() {
+        this.findNavController().navigate(
+            HomeFragmentDirections.actionHomeFragmentToSavingFragment()
         )
     }
 
