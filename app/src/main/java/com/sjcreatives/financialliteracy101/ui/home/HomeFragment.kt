@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.sjcreatives.financialliteracy101.data.models.LearningModule
 import com.sjcreatives.financialliteracy101.databinding.FragmentHomeBinding
 import com.sjcreatives.financialliteracy101.ui.adapters.LatestReadClickListener
 import com.sjcreatives.financialliteracy101.ui.adapters.LatestReadsAdapter
@@ -48,10 +49,16 @@ class HomeFragment : Fragment() {
         homeViewModel.navigateToModule.observe(viewLifecycleOwner){ module ->
             module?.let {
 
-                this.findNavController().navigate(
-                    HomeFragmentDirections.actionHomeFragmentToSavingFragment(module)
-                )
-                Toast.makeText(context, "You just navigated to ${module.title} screen",Toast.LENGTH_SHORT).show()
+                when(module.title){
+                    "Saving" -> navigateToSavingsModuleScreen(module)
+                    "Investing" -> navigateToInvestmentModuleScreen(module)
+                    "Budgeting" -> navigateTOBudgetingModuleScreen(module)
+                    "Insurance" -> navigateTOInsuranceModuleScreen(module)
+                    "Debt/Credit" -> navigateTODebtModuleScreen(module)
+                    "Tax" -> navigateTOTaxModuleScreen(module)
+                    else -> Toast.makeText(context, "Oops! ${module.title} Not Found",Toast.LENGTH_SHORT).show()
+
+                }
                 homeViewModel.doneNavigatingToModule()
             }
         }
@@ -62,6 +69,30 @@ class HomeFragment : Fragment() {
             }
         }
 
+    }
+
+    private fun navigateTOBudgetingModuleScreen(module: LearningModule) {
+        Toast.makeText(context, "Oops! ${module.title} Module Not Found",Toast.LENGTH_SHORT).show()
+    }
+
+    private fun navigateTOInsuranceModuleScreen(module: LearningModule) {
+        Toast.makeText(context, "Oops! ${module.title} Module Not Found",Toast.LENGTH_SHORT).show()
+    }
+    private fun navigateTODebtModuleScreen(module: LearningModule) {
+        Toast.makeText(context, "Oops! ${module.title} Module Not Found",Toast.LENGTH_SHORT).show()
+    }
+    private fun navigateTOTaxModuleScreen(module: LearningModule) {
+        Toast.makeText(context, "Oops! ${module.title} Module Not Found",Toast.LENGTH_SHORT).show()
+    }
+
+    private fun navigateToInvestmentModuleScreen(module: LearningModule) {
+        Toast.makeText(context, "Oops! ${module.title} Module Not Found",Toast.LENGTH_SHORT).show()
+    }
+
+    private fun navigateToSavingsModuleScreen(module: LearningModule) {
+        this.findNavController().navigate(
+            HomeFragmentDirections.actionHomeFragmentToSavingFragment(module)
+        )
     }
 
     private fun setupModulesRecyclerview (binding: FragmentHomeBinding){
