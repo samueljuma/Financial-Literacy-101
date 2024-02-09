@@ -64,6 +64,9 @@ class HomeFragment : Fragment() {
         }
         homeViewModel.navigateToLatestRead.observe(viewLifecycleOwner){ latestRead ->
             latestRead?.let {
+                this.findNavController().navigate(
+                    HomeFragmentDirections.actionHomeFragmentToLatestReadFragment()
+                )
                 Toast.makeText(context, "Hello ${latestRead.title}", Toast.LENGTH_SHORT).show()
                 homeViewModel.doneNavigatingToLatestRead()
             }

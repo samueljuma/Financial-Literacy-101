@@ -28,6 +28,9 @@
         <action
             android:id="@+id/action_homeFragment_to_taxFragment"
             app:destination="@id/taxFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_latestReadFragment"
+            app:destination="@id/latestReadFragment" />
     </fragment>
     <fragment
         android:id="@+id/savingFragment"
@@ -60,4 +63,8 @@
         android:name="com.sjcreatives.financialliteracy101.ui.tax.TaxFragment"
         android:label="fragment_tax"
         tools:layout="@layout/fragment_tax" />
+    <fragment
+        android:id="@+id/latestReadFragment"
+        android:name="com.sjcreatives.financialliteracy101.ui.LatestReadFragment"
+        android:label="LatestReadFragment" />
 </navigation>
