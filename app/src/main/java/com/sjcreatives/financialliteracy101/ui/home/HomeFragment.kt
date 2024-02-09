@@ -1,5 +1,7 @@
 package com.sjcreatives.financialliteracy101.ui.home
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -64,10 +66,8 @@ class HomeFragment : Fragment() {
         }
         homeViewModel.navigateToLatestRead.observe(viewLifecycleOwner){ latestRead ->
             latestRead?.let {
-                this.findNavController().navigate(
-                    HomeFragmentDirections.actionHomeFragmentToLatestReadFragment()
-                )
-                Toast.makeText(context, "Hello ${latestRead.title}", Toast.LENGTH_SHORT).show()
+                val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/samueljuma/MovieApp"))
+                startActivity(browserIntent)
                 homeViewModel.doneNavigatingToLatestRead()
             }
         }
