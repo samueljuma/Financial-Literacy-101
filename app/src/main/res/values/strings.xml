@@ -5,4 +5,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="savings_text">Saving</string>
+    <string name="saving_def">The act of setting aside a portion of
+        one\'s income for future use, typically for emergencies,
+        purchases, or investment</string>
+    <string name="saving_title1">What is Saving?</string>
 </resources>
