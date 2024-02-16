@@ -33,10 +33,8 @@ class SavingFragment : Fragment() {
         savingItemAdapter = SavingItemAdapter()
         viewPager.adapter = savingItemAdapter
 
-        TabLayoutMediator(binding.tabLayout, viewPager){tab, position ->
+        binding.indicator.attachTo(viewPager)
 
-
-        }.attach()
         val savingCards = listOf(
             SavingItem(1,"What is Saving?",  R.string.saving_def.toString()),
             SavingItem(2,"What is Saving?",  R.string.saving_def.toString()),

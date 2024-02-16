@@ -71,4 +71,8 @@ dependencies {
     //`ViewPager2
     implementation("androidx.viewpager2:viewpager2:1.0.0")
 
+    // circle indicator for sliding views
+    implementation ("me.relex:circleindicator:2.1.6")
+    implementation("com.tbuonomo:dotsindicator:5.0")
+
 }
