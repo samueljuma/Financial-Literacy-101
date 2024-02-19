@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#549CDA"
+        android:background="#026E64"
         android:orientation="vertical"
         tools:context=".ui.saving.SavingFragment">
 
@@ -105,6 +105,7 @@
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation"
+            android:paddingBottom="18dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:labelVisibilityMode="labeled"

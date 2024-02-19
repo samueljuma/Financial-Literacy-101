@@ -9,31 +9,15 @@
         //status bar text colors
         <item name="android:windowLightStatusBar">false</item>
 
-        <item name="android:navigationBarColor" tools:ignore="NewApi">@color/white</item>
+<!--        <item name="android:navigationBarColor" >@color/white</item>-->
         <!--changes status bar text color when background is white-->
         <!--changes navigation bar text color when background is white-->
-        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">true</item>
+        <item name="android:windowLightNavigationBar">false</item>
 
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
-    <style name="Theme.LightStatusBar" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-        <item name="android:windowTranslucentStatus">true</item>
-        <!--        <item name="android:windowTranslucentNavigation">true</item>-->
-        <item name="android:fitsSystemWindows">true</item>
-        //status bar text colors
-        <item name="android:windowLightStatusBar">true</item>
 
-        <item name="android:navigationBarColor" tools:ignore="NewApi">@color/white</item>
-        <!--changes status bar text color when background is white-->
-        <!--changes navigation bar text color when background is white-->
-        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">true</item>
-
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-    </style>
 
     <style name="Theme.FinancialLiteracy101" parent="Base.Theme.FinancialLiteracy101" />
 </resources>

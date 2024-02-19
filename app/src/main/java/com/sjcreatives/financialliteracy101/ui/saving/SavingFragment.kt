@@ -38,7 +38,12 @@ class SavingFragment : Fragment() {
         val savingCards = listOf(
             SavingItem(1,"What is Saving?",  R.string.saving_def.toString()),
             SavingItem(2,"What is Saving?",  R.string.saving_def.toString()),
-            SavingItem(3,"What is Saving?",  R.string.saving_def.toString())
+            SavingItem(3,"What is Saving?",  R.string.saving_def.toString()),
+            SavingItem(4,"What is Saving?",  R.string.saving_def.toString()),
+            SavingItem(5,"What is Saving?",  R.string.saving_def.toString()),
+            SavingItem(6,"What is Saving?",  R.string.saving_def.toString()),
+            SavingItem(7,"What is Saving?",  R.string.saving_def.toString()),
+            SavingItem(82,"What is Saving?",  R.string.saving_def.toString())
         )
         savingItemAdapter.submitList(savingCards)
 
