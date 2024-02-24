@@ -11,4 +11,5 @@
     <string name="saving_title1">What is Saving?</string>
     <string name="title_home">Home</string>
     <string name="stocks_desc">Also known as shares or equity, represent ownership in a company. When you buy a stock, you become a shareholder and own a part of that company. </string>
+    <string name="invest_desc">It’s putting money into assets that will generate income for you.</string>
 </resources>
