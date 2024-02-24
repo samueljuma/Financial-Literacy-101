@@ -5,16 +5,40 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.sjcreatives.financialliteracy101.R
+import com.sjcreatives.financialliteracy101.data.models.InvestItem
+import com.sjcreatives.financialliteracy101.databinding.FragmentInvestingBinding
+import com.sjcreatives.financialliteracy101.ui.adapters.InvestItemAdapter
 
 class InvestingFragment : Fragment() {
 
+    private lateinit var binding: FragmentInvestingBinding
+
+    private lateinit var adapter: InvestItemAdapter
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_investing, container, false)
+        binding = FragmentInvestingBinding.inflate(layoutInflater, container, false)
+
+        val listOfInvestItems = listOf(
+            InvestItem(0,"Stock",getString(R.string.stocks_desc),R.drawable.what),
+            InvestItem(1,"Stock",getString(R.string.stocks_desc),R.drawable.what),
+            InvestItem(2,"Stock",getString(R.string.stocks_desc),R.drawable.what),
+            InvestItem(3,"Stock",getString(R.string.stocks_desc),R.drawable.what),
+            InvestItem(4,"Stock",getString(R.string.stocks_desc),R.drawable.what),
+            InvestItem(5,"Stock",getString(R.string.stocks_desc),R.drawable.what),
+        )
+
+        adapter = InvestItemAdapter()
+
+        binding.recyclerView.adapter = adapter
+        binding.recyclerView.layoutManager = LinearLayoutManager(context)
+
+        adapter.submitList(listOfInvestItems)
+        return binding.root
     }
 
 }

@@ -7,12 +7,12 @@
         <!--        <item name="android:windowTranslucentNavigation">true</item>-->
         <item name="android:fitsSystemWindows">true</item>
         //status bar text colors
-        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightStatusBar">true</item>
 
 <!--        <item name="android:navigationBarColor" >@color/white</item>-->
         <!--changes status bar text color when background is white-->
         <!--changes navigation bar text color when background is white-->
-        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:windowLightNavigationBar">true</item>
 
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
