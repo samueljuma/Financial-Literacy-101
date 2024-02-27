@@ -25,12 +25,11 @@ class InvestingFragment : Fragment() {
 
         val listOfInvestItems = listOf(
             InvestItem(0,"Stock",getString(R.string.stocks_desc),R.drawable.what),
-            InvestItem(1,"Stock",getString(R.string.stocks_desc),R.drawable.what),
-            InvestItem(2,"Stock",getString(R.string.stocks_desc),R.drawable.what),
-            InvestItem(3,"Stock",getString(R.string.stocks_desc),R.drawable.what),
-            InvestItem(4,"Stock",getString(R.string.stocks_desc),R.drawable.what),
-            InvestItem(5,"Stock",getString(R.string.stocks_desc),R.drawable.what),
-        )
+            InvestItem(1,"Bonds",getString(R.string.stocks_desc),R.drawable.what),
+            InvestItem(2,"Real Estate",getString(R.string.stocks_desc),R.drawable.what),
+            InvestItem(3,"Sacco",getString(R.string.stocks_desc),R.drawable.what),
+            InvestItem(4,"Unit Trusts",getString(R.string.stocks_desc),R.drawable.what),
+            )
 
         adapter = InvestItemAdapter()
 

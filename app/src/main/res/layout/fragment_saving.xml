@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#026E64"
+        android:background="@color/default_bg"
         android:orientation="vertical"
         tools:context=".ui.saving.SavingFragment">
 
@@ -18,38 +18,30 @@
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="10dp"
             android:layout_weight="0"
             android:gravity="center"
             android:orientation="horizontal"
-            android:paddingTop="50dp">
+            android:paddingTop="20dp">
 
             <View
                 android:id="@+id/view1"
                 android:layout_width="100dp"
                 android:layout_height="2dp"
-                android:background="@color/white" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/star" />
+                android:background="@color/black" />
 
             <ImageView
                 android:layout_width="40dp"
+                android:layout_margin="8dp"
                 android:layout_height="40dp"
                 android:src="@drawable/save_icon" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/star" />
 
             <View
                 android:id="@+id/view2"
                 android:layout_width="100dp"
                 android:layout_height="2dp"
-                android:background="@color/white" />
+                android:background="@color/black" />
         </LinearLayout>
 
         <TextView
@@ -60,7 +52,7 @@
             android:layout_marginTop="10dp"
             android:layout_weight="0"
             android:text="Saving"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="30sp"
             android:textStyle="bold" />
 
