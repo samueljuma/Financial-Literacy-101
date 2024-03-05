@@ -92,7 +92,8 @@
                 android:id="@+id/indicator"
                 app:dotsColor="@color/white"
                 app:dotsSize="6dp"
-                app:progressMode="true" />
+                app:progressMode="true"
+                app:selectedDotColor="@color/black"/>
         </LinearLayout>
 
         <com.google.android.material.bottomnavigation.BottomNavigationView

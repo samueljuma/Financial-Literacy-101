@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sjcreatives.financialliteracy101.R
 import com.sjcreatives.financialliteracy101.data.models.InvestItem
@@ -24,17 +25,18 @@ class InvestingFragment : Fragment() {
         binding = FragmentInvestingBinding.inflate(layoutInflater, container, false)
 
         val listOfInvestItems = listOf(
-            InvestItem(0,"Stock",getString(R.string.stocks_desc),R.drawable.what),
-            InvestItem(1,"Bonds",getString(R.string.stocks_desc),R.drawable.what),
-            InvestItem(2,"Real Estate",getString(R.string.stocks_desc),R.drawable.what),
-            InvestItem(3,"Sacco",getString(R.string.stocks_desc),R.drawable.what),
-            InvestItem(4,"Unit Trusts",getString(R.string.stocks_desc),R.drawable.what),
+            InvestItem(0,"Stocks",getString(R.string.stocks_desc),R.drawable.stocks),
+            InvestItem(1,"Bonds",getString(R.string.stocks_desc),R.drawable.stocks),
+            InvestItem(2,"Real Estate",getString(R.string.stocks_desc),R.drawable.stocks),
+            InvestItem(3,"Sacco",getString(R.string.stocks_desc),R.drawable.stocks),
+            InvestItem(4,"Unit Trusts",getString(R.string.stocks_desc),R.drawable.stocks),
+            InvestItem(5,"Unit Trusts",getString(R.string.stocks_desc),R.drawable.stocks)
             )
 
         adapter = InvestItemAdapter()
 
         binding.recyclerView.adapter = adapter
-        binding.recyclerView.layoutManager = LinearLayoutManager(context)
+        binding.recyclerView.layoutManager = GridLayoutManager(context,2)
 
         adapter.submitList(listOfInvestItems)
         return binding.root
