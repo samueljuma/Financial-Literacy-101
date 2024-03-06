@@ -45,7 +45,11 @@
         android:id="@+id/investingFragment"
         android:name="com.sjcreatives.financialliteracy101.ui.investing.InvestingFragment"
         android:label="fragment_investing"
-        tools:layout="@layout/fragment_investing" />
+        tools:layout="@layout/fragment_investing" >
+        <action
+            android:id="@+id/action_investingFragment_to_investItemDetailsFragment"
+            app:destination="@id/investItemDetailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/budgetingFragment"
         android:name="com.sjcreatives.financialliteracy101.ui.budgeting.BudgetingFragment"
@@ -70,4 +74,13 @@
         android:id="@+id/latestReadFragment"
         android:name="com.sjcreatives.financialliteracy101.ui.LatestReadFragment"
         android:label="LatestReadFragment" />
+    <fragment
+        android:id="@+id/investItemDetailsFragment"
+        android:name="com.sjcreatives.financialliteracy101.ui.investing.InvestItemDetailsFragment"
+        android:label="InvestItemDetailsFragment"
+        tools:layout="@layout/fragment_invest_item_details">
+        <argument
+            android:name="investItem"
+            app:argType="com.sjcreatives.financialliteracy101.data.models.InvestItem" />
+    </fragment>
 </navigation>

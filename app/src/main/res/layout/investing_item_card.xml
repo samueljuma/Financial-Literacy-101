@@ -5,6 +5,9 @@
 
     <data>
         <variable
+            name="clickListener"
+            type="com.sjcreatives.financialliteracy101.ui.adapters.InvestItemClickListener" />
+        <variable
             name="investItem"
             type="com.sjcreatives.financialliteracy101.data.models.InvestItem" />
     </data>
@@ -15,6 +18,7 @@
         android:layout_marginEnd="4dp"
         android:layout_marginTop="4dp"
         app:cardCornerRadius="8dp"
+        android:onClick="@{()  -> clickListener.onClick(investItem)}"
         app:cardElevation="16dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -28,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:contentDescription="TODO"
                 android:scaleType="centerCrop"
-                tools:src="@drawable/stocks"
+                tools:src="@drawable/stockss"
                 android:src="@{investItem.image}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -44,7 +48,7 @@
                 android:text="@{investItem.title}"
                 tools:text="@string/stocks_title"
                 android:textAllCaps="true"
-                android:background="#AA211DD4"
+                android:background="#AA057D8C"
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold"

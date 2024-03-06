@@ -8,11 +8,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.sjcreatives.financialliteracy101.data.models.InvestItem
 import com.sjcreatives.financialliteracy101.databinding.InvestingItemCardBinding
 
-class InvestItemAdapter: ListAdapter<InvestItem, InvestItemAdapter.ViewHolder> (InvestItemDiffCallback())  {
+class InvestItemAdapter (val clickListener: InvestItemClickListener): ListAdapter<InvestItem, InvestItemAdapter.ViewHolder> (InvestItemDiffCallback())  {
 
     class ViewHolder(val binding: InvestingItemCardBinding) : RecyclerView.ViewHolder(binding.root){
 
-        fun bind (investItem: InvestItem){
+        fun bind (investItem: InvestItem, clickListener: InvestItemClickListener){
+            binding.clickListener = clickListener
             binding.investItem = investItem
             binding.executePendingBindings()
         }
@@ -32,9 +33,13 @@ class InvestItemAdapter: ListAdapter<InvestItem, InvestItemAdapter.ViewHolder> (
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        holder.bind(getItem(position)!!, clickListener)
     }
 
+}
+
+class InvestItemClickListener (val clickListener: (investItem: InvestItem) -> Unit) {
+    fun onClick(investItem: InvestItem) = clickListener(investItem)
 }
 
 class InvestItemDiffCallback : DiffUtil.ItemCallback<InvestItem>() {

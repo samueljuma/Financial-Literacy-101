@@ -31,20 +31,13 @@ class HomeViewModel : ViewModel() {
 
     private fun loadModules() {
         val module1 = LearningModule(0,"Saving", R.drawable.save)
-        val module2 = LearningModule(0,"Investing", R.drawable.invest)
-        val module3 = LearningModule(0,"Budgeting", R.drawable.budget)
-        val module4 = LearningModule(0,"Insurance", R.drawable.insurance)
-        val module5 = LearningModule(0,"Debt/Credit", R.drawable.debt)
-        val module6 = LearningModule(0,"Tax", R.drawable.tax)
-        val module7 = LearningModule(0,"Saving", R.drawable.save)
-        val module8 = LearningModule(0,"Investing", R.drawable.invest)
-        val module9 = LearningModule(0,"Budgeting", R.drawable.budget)
-        val module10 = LearningModule(0,"Insurance", R.drawable.insurance)
-        val module11 = LearningModule(0,"Debt/Credit", R.drawable.debt)
-        val module12 = LearningModule(0,"Tax", R.drawable.tax)
+        val module2 = LearningModule(2,"Investing", R.drawable.invest)
+        val module3 = LearningModule(3,"Budgeting", R.drawable.budget)
+        val module4 = LearningModule(4,"Insurance", R.drawable.insurance)
+        val module5 = LearningModule(5,"Debt/Credit", R.drawable.debt)
+        val module6 = LearningModule(6,"Tax", R.drawable.tax)
 
-        _learningModules.value = listOf(module1, module2, module3, module4, module5, module6,
-            module7, module8, module9, module10, module11, module12)
+        _learningModules.value = listOf(module1, module2, module3, module4, module5, module6)
     }
 
     private val _navigateToModule = MutableLiveData<LearningModule?>()
