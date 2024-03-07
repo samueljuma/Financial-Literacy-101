@@ -48,7 +48,7 @@
                 android:text="@{investItem.title}"
                 tools:text="@string/stocks_title"
                 android:textAllCaps="true"
-                android:background="#AA057D8C"
+                android:background="#AA211DD4"
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold"

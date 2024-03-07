@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.sjcreatives.financialliteracy101.data.models.InvestItem
 import com.sjcreatives.financialliteracy101.databinding.InvestingItemCardBinding
 
-class InvestItemAdapter (val clickListener: InvestItemClickListener): ListAdapter<InvestItem, InvestItemAdapter.ViewHolder> (InvestItemDiffCallback())  {
+class InvestItemAdapter (
+    val clickListener: InvestItemClickListener
+): ListAdapter<InvestItem, InvestItemAdapter.ViewHolder> (InvestItemDiffCallback())  {
 
     class ViewHolder(val binding: InvestingItemCardBinding) : RecyclerView.ViewHolder(binding.root){
 

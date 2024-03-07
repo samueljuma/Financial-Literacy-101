@@ -23,6 +23,12 @@ class InvestItemDetailsFragment : Fragment() {
         binding = FragmentInvestItemDetailsBinding.inflate(layoutInflater, container, false)
 
         viewModel.setInvestItem(arguments.investItem)
+
+        viewModel.investItem.observe(viewLifecycleOwner){investItem ->
+            investItem?.let {
+                binding.investItem = investItem
+            }
+        }
         return binding.root
     }
 
