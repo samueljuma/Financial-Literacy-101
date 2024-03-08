@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -21,6 +22,8 @@ class SavingFragment : Fragment() {
     private lateinit var viewPager: ViewPager2
     private lateinit var savingItemAdapter: SavingItemAdapter
 
+    private val viewModel: SavingViewModel by viewModels()
+
     private lateinit var bottomNavigationView: BottomNavigationView
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,17 +38,12 @@ class SavingFragment : Fragment() {
 
         binding.indicator.attachTo(viewPager)
 
-        val savingCards = listOf(
-            SavingItem(1,"What is Saving?",  R.string.saving_def.toString()),
-            SavingItem(2,"What is Saving?",  R.string.saving_def.toString()),
-            SavingItem(3,"What is Saving?",  R.string.saving_def.toString()),
-            SavingItem(4,"What is Saving?",  R.string.saving_def.toString()),
-            SavingItem(5,"What is Saving?",  R.string.saving_def.toString()),
-            SavingItem(6,"What is Saving?",  R.string.saving_def.toString()),
-            SavingItem(7,"What is Saving?",  R.string.saving_def.toString()),
-            SavingItem(82,"What is Saving?",  R.string.saving_def.toString())
-        )
-        savingItemAdapter.submitList(savingCards)
+        viewModel.setSavingItems(getListOfSavingItems())
+        viewModel.listOfSavingItems.observe(viewLifecycleOwner){list ->
+            list?.let {
+                savingItemAdapter.submitList(list)
+            }
+        }
 
         bottomNavigationView = binding.bottomNavigation
 
@@ -63,6 +61,19 @@ class SavingFragment : Fragment() {
         }
 
         return binding.root
+    }
+
+    private fun getListOfSavingItems(): List<SavingItem>{
+        return  listOf(
+            SavingItem(1,"What is Saving?",  R.string.saving_def.toString()),
+            SavingItem(2,"What is Saving?",  R.string.saving_def.toString()),
+            SavingItem(3,"What is Saving?",  R.string.saving_def.toString()),
+            SavingItem(4,"What is Saving?",  R.string.saving_def.toString()),
+            SavingItem(5,"What is Saving?",  R.string.saving_def.toString()),
+            SavingItem(6,"What is Saving?",  R.string.saving_def.toString()),
+            SavingItem(7,"What is Saving?",  R.string.saving_def.toString()),
+            SavingItem(82,"What is Saving?",  R.string.saving_def.toString())
+        )
     }
 
 }

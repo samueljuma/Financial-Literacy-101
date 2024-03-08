@@ -54,12 +54,12 @@ class InvestingFragment : Fragment() {
     }
     private fun getListOfInvestItems(): List<InvestItem> {
         return listOf(
-            InvestItem(0, "Stocks", getString(R.string.stocks_desc), R.drawable.stockss),
-            InvestItem(1, "Bonds", getString(R.string.stocks_desc), R.drawable.bonds),
-            InvestItem(2, "Real Estate", getString(R.string.stocks_desc), R.drawable.stock),
-            InvestItem(3, "Sacco", getString(R.string.stocks_desc), R.drawable.bonds2),
-            InvestItem(4, "Unit Trusts", getString(R.string.stocks_desc), R.drawable.stockss),
-            InvestItem(5, " ETFs", getString(R.string.stocks_desc), R.drawable.stocks)
+            InvestItem(0, "Stocks", getString(R.string.stocks_desc), R.drawable.save),
+            InvestItem(1, "Bonds", getString(R.string.stocks_desc), R.drawable.save),
+            InvestItem(2, "Real Estate", getString(R.string.stocks_desc), R.drawable.save),
+            InvestItem(3, "Sacco", getString(R.string.stocks_desc), R.drawable.save),
+            InvestItem(4, "Unit Trusts", getString(R.string.stocks_desc), R.drawable.save),
+            InvestItem(5, " ETFs", getString(R.string.stocks_desc), R.drawable.save)
         )
     }
 
