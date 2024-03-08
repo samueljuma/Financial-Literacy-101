@@ -13,4 +13,5 @@
     <string name="title_home">Home</string>
     <string name="stocks_desc">Also known as shares or equity and represent ownership in a company. </string>
     <string name="invest_desc">It’s putting money into assets that will generate income for you.</string>
+    <string name="info_place_holder">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum </string>
 </resources>
