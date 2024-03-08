@@ -6,7 +6,7 @@
     <data>
         <variable
             name="clickListener"
-            type="com.sjcreatives.financialliteracy101.ui.adapters.InvestItemClickListener" />
+            type="com.sjcreatives.financialliteracy101.ui.investing.InvestItemClickListener" />
         <variable
             name="investItem"
             type="com.sjcreatives.financialliteracy101.data.models.InvestItem" />

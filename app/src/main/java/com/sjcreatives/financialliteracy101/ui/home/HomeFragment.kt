@@ -16,10 +16,6 @@ import com.sjcreatives.financialliteracy101.R
 import com.sjcreatives.financialliteracy101.data.models.LatestRead
 import com.sjcreatives.financialliteracy101.data.models.LearningModule
 import com.sjcreatives.financialliteracy101.databinding.FragmentHomeBinding
-import com.sjcreatives.financialliteracy101.ui.adapters.LatestReadClickListener
-import com.sjcreatives.financialliteracy101.ui.adapters.LatestReadsAdapter
-import com.sjcreatives.financialliteracy101.ui.adapters.ModuleClickListener
-import com.sjcreatives.financialliteracy101.ui.adapters.ModulesAdapter
 
 class HomeFragment : Fragment() {
 

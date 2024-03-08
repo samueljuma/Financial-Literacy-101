@@ -10,7 +10,7 @@
 
         <variable
             name="clickListener"
-            type="com.sjcreatives.financialliteracy101.ui.adapters.ModuleClickListener" />
+            type="com.sjcreatives.financialliteracy101.ui.home.ModuleClickListener" />
         </data>
 
     <androidx.cardview.widget.CardView

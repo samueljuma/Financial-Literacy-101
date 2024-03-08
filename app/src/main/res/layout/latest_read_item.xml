@@ -9,7 +9,7 @@
             type="com.sjcreatives.financialliteracy101.data.models.LatestRead" />
         <variable
             name="clickListener"
-            type="com.sjcreatives.financialliteracy101.ui.adapters.LatestReadClickListener" />
+            type="com.sjcreatives.financialliteracy101.ui.home.LatestReadClickListener" />
     </data>
 
     <androidx.cardview.widget.CardView

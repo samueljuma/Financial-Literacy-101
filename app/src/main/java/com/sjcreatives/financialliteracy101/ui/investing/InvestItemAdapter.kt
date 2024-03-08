@@ -1,4 +1,4 @@
-package com.sjcreatives.financialliteracy101.ui.adapters
+package com.sjcreatives.financialliteracy101.ui.investing
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -21,7 +21,7 @@ class InvestItemAdapter (
         }
 
         companion object{
-            fun from (parent: ViewGroup): ViewHolder{
+            fun from (parent: ViewGroup): ViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
                 val binding = InvestingItemCardBinding.inflate(layoutInflater, parent, false)
                 return ViewHolder(binding)

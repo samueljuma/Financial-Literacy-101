@@ -1,4 +1,4 @@
-package com.sjcreatives.financialliteracy101.ui.adapters
+package com.sjcreatives.financialliteracy101.ui.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

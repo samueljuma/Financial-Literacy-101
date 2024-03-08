@@ -9,11 +9,9 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.tabs.TabLayoutMediator
 import com.sjcreatives.financialliteracy101.R
 import com.sjcreatives.financialliteracy101.data.models.SavingItem
 import com.sjcreatives.financialliteracy101.databinding.FragmentSavingBinding
-import com.sjcreatives.financialliteracy101.ui.adapters.SavingItemAdapter
 
 
 class SavingFragment : Fragment() {
@@ -65,14 +63,14 @@ class SavingFragment : Fragment() {
 
     private fun getListOfSavingItems(): List<SavingItem>{
         return  listOf(
-            SavingItem(1,"What is Saving?",  R.string.saving_def.toString()),
-            SavingItem(2,"What is Saving?",  R.string.saving_def.toString()),
-            SavingItem(3,"What is Saving?",  R.string.saving_def.toString()),
-            SavingItem(4,"What is Saving?",  R.string.saving_def.toString()),
-            SavingItem(5,"What is Saving?",  R.string.saving_def.toString()),
-            SavingItem(6,"What is Saving?",  R.string.saving_def.toString()),
-            SavingItem(7,"What is Saving?",  R.string.saving_def.toString()),
-            SavingItem(82,"What is Saving?",  R.string.saving_def.toString())
+            SavingItem(1,"What is Saving?",  getString(R.string.saving_def)),
+            SavingItem(2,"What is Saving?",  getString(R.string.saving_def)),
+            SavingItem(3,"What is Saving?",  getString(R.string.saving_def)),
+            SavingItem(4,"What is Saving?",  getString(R.string.saving_def)),
+            SavingItem(5,"What is Saving?",  getString(R.string.saving_def)),
+            SavingItem(6,"What is Saving?",  getString(R.string.saving_def)),
+            SavingItem(7,"What is Saving?",  getString(R.string.saving_def)),
+            SavingItem(8,"What is Saving?",  getString(R.string.saving_def))
         )
     }
 

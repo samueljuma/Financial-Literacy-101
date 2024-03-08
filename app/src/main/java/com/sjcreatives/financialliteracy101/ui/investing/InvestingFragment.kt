@@ -11,8 +11,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.sjcreatives.financialliteracy101.R
 import com.sjcreatives.financialliteracy101.data.models.InvestItem
 import com.sjcreatives.financialliteracy101.databinding.FragmentInvestingBinding
-import com.sjcreatives.financialliteracy101.ui.adapters.InvestItemAdapter
-import com.sjcreatives.financialliteracy101.ui.adapters.InvestItemClickListener
 
 class InvestingFragment : Fragment() {
 
