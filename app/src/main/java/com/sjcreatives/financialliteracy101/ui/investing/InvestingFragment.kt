@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.sjcreatives.financialliteracy101.R
 import com.sjcreatives.financialliteracy101.data.models.InvestItem
 import com.sjcreatives.financialliteracy101.databinding.FragmentInvestingBinding
@@ -28,14 +27,7 @@ class InvestingFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentInvestingBinding.inflate(layoutInflater, container, false)
 
-        val listOfInvestItems = listOf(
-            InvestItem(0,"Stocks",getString(R.string.stocks_desc),R.drawable.stockss),
-            InvestItem(1,"Bonds",getString(R.string.stocks_desc),R.drawable.bonds),
-            InvestItem(2,"Real Estate",getString(R.string.stocks_desc),R.drawable.stock),
-            InvestItem(3,"Sacco",getString(R.string.stocks_desc),R.drawable.bonds2),
-            InvestItem(4,"Unit Trusts",getString(R.string.stocks_desc),R.drawable.stockss),
-            InvestItem(5," ETFs",getString(R.string.stocks_desc),R.drawable.stocks)
-            )
+        viewModel.setInvestItems(getListOfInvestItems())
 
         adapter = InvestItemAdapter(InvestItemClickListener { investItem ->
             viewModel.onInvestItemClicked(investItem)
@@ -44,7 +36,11 @@ class InvestingFragment : Fragment() {
         binding.recyclerView.adapter = adapter
         binding.recyclerView.layoutManager = GridLayoutManager(context,2)
 
-        adapter.submitList(listOfInvestItems)
+        viewModel.listOfInvestItems.observe(viewLifecycleOwner){list ->
+            list?.let {
+                adapter.submitList(list)
+            }
+        }
 
         viewModel.navigateToDetails.observe(viewLifecycleOwner){investItem ->
             investItem?.let {
@@ -55,6 +51,16 @@ class InvestingFragment : Fragment() {
             }
         }
         return binding.root
+    }
+    private fun getListOfInvestItems(): List<InvestItem> {
+        return listOf(
+            InvestItem(0, "Stocks", getString(R.string.stocks_desc), R.drawable.stockss),
+            InvestItem(1, "Bonds", getString(R.string.stocks_desc), R.drawable.bonds),
+            InvestItem(2, "Real Estate", getString(R.string.stocks_desc), R.drawable.stock),
+            InvestItem(3, "Sacco", getString(R.string.stocks_desc), R.drawable.bonds2),
+            InvestItem(4, "Unit Trusts", getString(R.string.stocks_desc), R.drawable.stockss),
+            InvestItem(5, " ETFs", getString(R.string.stocks_desc), R.drawable.stocks)
+        )
     }
 
 }

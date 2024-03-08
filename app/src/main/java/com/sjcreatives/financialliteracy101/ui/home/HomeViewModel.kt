@@ -14,30 +14,13 @@ class HomeViewModel : ViewModel() {
 
     private val _learningModules = MutableLiveData<List<LearningModule>>()
     val learningModules: LiveData<List<LearningModule>> = _learningModules
-    init {
-        loadLatestReads()
-        loadModules()
+
+    fun setLatestReads(list:List<LatestRead>) {
+        _latestReads.value = list
     }
 
-    private fun loadLatestReads() {
-
-        val lr1 = LatestRead(0, "Title1", R.drawable.read1)
-        val lr2 = LatestRead(0, "Title2", R.drawable.read2)
-        val lr3 = LatestRead(0, "Title3", R.drawable.read3)
-        val lr4 = LatestRead(0, "Title4", R.drawable.read4)
-
-        _latestReads.value = listOf(lr1, lr2, lr3, lr4)
-    }
-
-    private fun loadModules() {
-        val module1 = LearningModule(0,"Saving", R.drawable.save)
-        val module2 = LearningModule(2,"Investing", R.drawable.invest)
-        val module3 = LearningModule(3,"Budgeting", R.drawable.budget)
-        val module4 = LearningModule(4,"Insurance", R.drawable.insurance)
-        val module5 = LearningModule(5,"Debt/Credit", R.drawable.debt)
-        val module6 = LearningModule(6,"Tax", R.drawable.tax)
-
-        _learningModules.value = listOf(module1, module2, module3, module4, module5, module6)
+    fun setModules(list: List<LearningModule>) {
+        _learningModules.value = list
     }
 
     private val _navigateToModule = MutableLiveData<LearningModule?>()
