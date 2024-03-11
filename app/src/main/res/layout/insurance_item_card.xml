@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="insuranceItem"
+            type="com.sjcreatives.financialliteracy101.data.models.InsuranceItem" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_marginBottom="4dp"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <androidx.cardview.widget.CardView
+            android:paddingBottom="40dp"
+            android:background="?attr/colorSurface"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="16dp"
+            android:layout_margin="2dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_marginTop="40dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@{insuranceItem.image}"
+                    tools:src="@drawable/saving"
+                    android:layout_gravity="center_horizontal"/>
+
+                <TextView
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="@string/saving_title1"
+                    android:text="@{insuranceItem.title}"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center_horizontal"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="8dp"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:padding="20dp"
+                    android:text="@{insuranceItem.info}"
+                    tools:text="@string/saving_def"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</layout>
