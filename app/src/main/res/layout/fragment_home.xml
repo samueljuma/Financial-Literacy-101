@@ -3,65 +3,77 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-    <ScrollView
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@color/default_bg"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <LinearLayout
-            android:background="@color/default_bg"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/textView"
+            android:textSize="20sp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/finance"
+            android:layout_gravity="center"
+            />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                android:padding="2dp"
+                tools:context=".ui.main.MainActivity">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:textSize="20sp"
+                    android:layout_marginStart="8dp"
+                    android:textColor="@color/blue"
+                    android:layout_marginTop="2dp"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"
+                    android:text="@string/latest_reads" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/latest_reads_recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:scrollbars="horizontal"
+                    tools:listitem="@layout/module_item" />
+
+                <TextView
+                    android:id="@+id/textview3"
+                    android:layout_width="wrap_content"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    android:textColor="@color/blue"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="wrap_content"
+                    android:text="Learning Modules" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/modules_recyclerview"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"/>
+
+            </LinearLayout>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:paddingBottom="18dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="2dp"
-            tools:context=".ui.main.MainActivity">
+            app:labelVisibilityMode="labeled"
+            app:itemBackground="@color/white"
+            android:background="@drawable/bottom_nav_bg"
+            app:menu="@menu/bottom_navigation_menu" />
+    </LinearLayout>
 
-            <ImageView
-                android:id="@+id/textView"
-                android:textSize="20sp"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="30dp"
-                android:src="@drawable/finance"
-                android:layout_gravity="center"
-                />
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:textSize="20sp"
-                android:layout_marginStart="8dp"
-                android:textColor="@color/black"
-                android:layout_marginTop="2dp"
-                android:textStyle="bold"
-                android:layout_height="wrap_content"
-                android:text="@string/latest_reads" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/latest_reads_recyclerview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal"
-                android:scrollbars="horizontal"
-                tools:listitem="@layout/module_item" />
-
-            <TextView
-                android:id="@+id/textview3"
-                android:layout_width="wrap_content"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_gravity="center"
-                android:textColor="@color/black"
-                android:layout_marginTop="10dp"
-                android:layout_height="wrap_content"
-                android:text="Learning Modules" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/modules_recyclerview"
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="2dp"/>
-
-        </LinearLayout>
-    </ScrollView>
 </layout>

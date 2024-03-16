@@ -34,7 +34,7 @@
                 android:layout_width="40dp"
                 android:layout_margin="8dp"
                 android:layout_height="40dp"
-                android:src="@drawable/save_icon" />
+                android:src="@drawable/insurance_icon" />
 
 
             <View
