@@ -31,6 +31,12 @@
         <action
             android:id="@+id/action_homeFragment_to_latestReadFragment"
             app:destination="@id/latestReadFragment" />
+        <action
+            android:id="@+id/action_homeFragment_self"
+            app:popUpTo="@id/homeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_self2"
+            app:popUpTo="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/savingFragment"
